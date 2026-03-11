@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>SNS絶対成功させるくん</title>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; background: #f9fafb; }
+    
+    .header { position: sticky; top: 0; z-index: 50; display: flex; height: 80px; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.9); padding: 0 32px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); backdrop-filter: blur(8px); }
+    .header-logo { font-size: 1.25rem; font-weight: 700; color: #2563eb; }
+    
+    .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 6px; background: none; border: none; padding: 0; }
+    .hamburger span { width: 25px; height: 3px; background: #2563eb; transition: all 0.3s ease; }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+    
+    .nav-menu { display: flex; gap: 24px; align-items: center; }
+    .nav-menu a { color: #111827; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+    .nav-menu a:hover { color: #2563eb; }
+    .nav-menu .cta-btn { display: inline-block; background: #2563eb; color: #fff; padding: 10px 24px; border-radius: 9999px; font-size: 0.875rem; font-weight: 700; }
+    .nav-menu .cta-btn:hover { background: #1d4ed8; color: #fff; }
+    
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav-menu { position: absolute; top: 80px; left: 0; right: 0; flex-direction: column; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); padding: 24px 32px; gap: 16px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+      .nav-menu.active { max-height: 400px; }
+      .nav-menu a { display: block; }
+    }
+    
+    section { width: 100%; }
+    section img { display: block; width: 100%; height: auto; }
+    .footer { background: #111827; padding: 32px; text-align: center; color: #fff; font-size: 0.875rem; opacity: 0.7; }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-logo">SNS絶対成功させるくん</div>
+  <button class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <nav class="nav-menu" id="navMenu">
+    <a href="#">お問い合わせはこちら</a>
+    <a href="https://line.me/ja/" target="_blank" class="cta-btn">LINEはこちら</a>
+  </nav>
+</header>
+
+<main>
+  <section id="section1"><img src="https://jqpavdhxvmvuhwrbnosd.supabase.co/storage/v1/object/public/images/regenerate-1772794818171-sec-6574.png" alt="機能1" /></section>
+  <section id="section2"><img src="https://jqpavdhxvmvuhwrbnosd.supabase.co/storage/v1/object/public/images/regenerate-1772794822616-sec-6575.png" alt="機能2" /></section>
+  <section id="section3"><img src="https://jqpavdhxvmvuhwrbnosd.supabase.co/storage/v1/object/public/images/regenerate-1772794828273-sec-6576.png" alt="機能3" /></section>
+  <section id="section4"><img src="https://jqpavdhxvmvuhwrbnosd.supabase.co/storage/v1/object/public/images/regenerate-1772794823428-sec-6577.png" alt="機能4" /></section>
+  <section id="section5"><img src="https://jqpavdhxvmvuhwrbnosd.supabase.co/storage/v1/object/public/images/regenerate-1772794870195-sec-6578.png" alt="機能5" /></section>
+  <section id="section6"><img src="https://jqpavdhxvmvuhwrbnosd.supabase.co/storage/v1/object/public/images/regenerate-1772794868197-sec-6579.png" alt="機能6" /></section>
+  <section id="section7"><img src="https://jqpavdhxvmvuhwrbnosd.supabase.co/storage/v1/object/public/images/regenerate-1772794903607-sec-6580.png" alt="機能7" /></section>
+  <section id="section8"><img src="https://jqpavdhxvmvuhwrbnosd.supabase.co/storage/v1/object/public/images/regenerate-1772794903076-sec-6581.png" alt="機能8" /></section>
+</main>
+
+<footer class="footer">
+  <p>&copy; 2026 SNS絶対成功させるくん</p>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+  
+  // メニュー項目をクリック時に閉じる
+  document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
+  });
+</script>
+
+</body>
+</html>
